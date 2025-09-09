@@ -2,6 +2,7 @@ const express = require("express");
 const { links } = require("express/lib/response");
 const app = express();
 const ejs = require("ejs");
+const dotenv = require("dotenv");
 app.set("view engine", "ejs");
 const mongoose = require("mongoose");
 const userRoute = require('./routes/user.route');
@@ -20,7 +21,7 @@ mongoose.connect(URI)
     console.log("DB connection error", err)
      });
 
-     
+
 
 let allUsers = [];
 
