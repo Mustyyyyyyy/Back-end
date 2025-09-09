@@ -4,14 +4,15 @@ const app = express();
 const ejs = require("ejs");
 app.set("view engine", "ejs");
 const mongoose = require("mongoose");
-// const userModel = require("./models/user.model");
 const userRoute = require('./routes/user.route');
+dotenv.config();
+const URI = process.env.URI 
 
 
 app.use(express.urlencoded({ extended: true }));
 
-mongoose
-  .connect(URI)
+
+mongoose.connect(URI)
   .then(() => {
     console.log("MongoDB connected")
     })
@@ -19,11 +20,16 @@ mongoose
     console.log("DB connection error", err)
      });
 
-     const port = process.env.PORT || 3000;
+     
+
+let allUsers = [];
+
 
 app.use('/user', userRoute);
 
 
+
+const port = process.env.port || 3220;
 app.listen(port, () => {
   console.log(`server started at ${port}`);
 });
