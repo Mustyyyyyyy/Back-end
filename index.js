@@ -1,13 +1,17 @@
+require("dotenv").config();
+console.log("DEBUG => URI =", process.env.URI);
+
 const express = require("express");
 const { links } = require("express/lib/response");
 const app = express();
 const ejs = require("ejs");
-const dotenv = require("dotenv");
+// const dotenv = require("dotenv");
 app.set("view engine", "ejs");
 const mongoose = require("mongoose");
 const userRoute = require('./routes/user.route');
-dotenv.config();
-const URI = process.env.URI 
+// dotenv.config();
+const URI = process.env.URI
+
 
 
 app.use(express.urlencoded({ extended: true }));
