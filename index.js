@@ -10,9 +10,6 @@ const userRoute = require('./routes/user.route');
 
 app.use(express.urlencoded({ extended: true }));
 
-let URI =
-  "mongodb+srv://alagbemustapha02:musty1@cluster0.oup6mno.mongodb.net/mustydb?retryWrites=true&w=majority&appName=Cluster0";
-
 mongoose
   .connect(URI)
   .then(() => {
