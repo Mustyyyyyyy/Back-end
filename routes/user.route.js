@@ -1,16 +1,19 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { getSignup, postRegister, getSignIn, getDashboard, postLogin } = require('../controllers/user.controller');
-// const userModel = require('../models/user.model');
+const {
+  getSignup,
+  postRegister,
+  getSignIn,
+  postLogin,
+  getDashboard
+} = require("../controllers/user.controller");
 
-router.post('/register', postRegister);
+router.get("/signup", getSignup);
+router.post("/register", postRegister);
 
-router.get('/signup', getSignup);
-
-router.post('/login', postLogin);
-
-router.get('/signin', getSignIn);
+router.get("/signin", getSignIn);
+router.post("/login", postLogin);
 
 router.get("/dashboard", getDashboard);
 
-module.exports = router; 
+module.exports = router;
