@@ -1,5 +1,5 @@
 const userModel = require("../models/user.model");
-const bcrypt = require("bcryptjs"); // safer for deployment
+const bcrypt = require("bcryptjs"); 
 const nodemailer = require("nodemailer");
 
 exports.getSignup = (req, res) => {
